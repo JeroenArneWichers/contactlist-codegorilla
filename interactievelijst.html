@@ -44,7 +44,7 @@
 		<div class="col-md-12 mt-5 custom-collumn-box rounded">
 			<input id="MyFilterBox" type="text" onkeyup="myFilterFunction();" placeholder="Zoek naar collega's">
 			<input id="MyNewName" type="text" placeholder="Nieuw persoon">
-			<button onclick="addPerson();">Toevoegen</button>
+			<button onclick="addPerson(); clearbutton()";>Toevoegen</button>
 			<button onclick="sortListAZ()">Sorteer A-Z</button>
 			<button onclick="sortListZA()">Sorteer Z-A</button>
 
@@ -58,6 +58,12 @@
 
 
 <script>
+
+function clearbutton()
+  {
+    document.getElementById("MyNewName").value="";
+  }
+
 function addPerson()
 	{
 		var node = document.createElement("LI");                 // Create a <li> node
