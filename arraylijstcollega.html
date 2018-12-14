@@ -44,6 +44,9 @@
 			<img src="img/profielfoto.jpg" class="border6px m-3 img-fluid rounded-circle float-md-left custom-image-size" alt="">
 			<h1>Array lijst van collega's</h1>
 			<p>text</p>
+			<input id="MyNewName" type="text" placeholder="Nieuw persoon">
+			<button onclick="addPerson(); clearbutton()">Toevoegen</button>
+			<p id="arrayList"></p>
 		</div>
 	</div>
 </div>
@@ -55,5 +58,45 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+
+<script>
+		var personen = [
+		"Jeroen Wichers", 
+		"Rene Spijker", 
+		"Clemens Jongma",
+		"Christiaan Tingen"
+		];
+	document.getElementById("arrayList").innerHTML = personen;	
+
+/*function addPerson()
+	{
+		personen.push("pino");
+		document.getElementById("arrayList").innerHTML = personen;
+  }*/
+
+function addPerson()
+	{
+		// get value from the input text
+		var inputText = document.getElementById("MyNewName").value;
+		
+		// append data to the array
+		personen.push(inputText);
+		
+		var pushval = "";
+		
+		for(i = 0; i < personen.length; i++)
+		{
+				pushval = pushval + personen[i] + ",";
+		}
+		
+		// display array data
+		document.getElementById('arrayList').innerHTML = pushval;
+	}
+
+function clearbutton()
+  {
+    document.getElementById("MyNewName").value="";
+  }
+</script>
+	</body>
 </html>
