@@ -46,6 +46,8 @@
 			<p>text</p>
 			<input id="MyNewName" type="text" placeholder="Nieuw persoon">
 			<button onclick="addPerson(); clearbutton()">Toevoegen</button>
+			<button onclick="sorteerAZ()">Sort A-Z</button>
+			<button onclick="sorteerZA()">Sort Z-A</button>
 			<p id="arrayList"></p>
 		</div>
 	</div>
@@ -97,6 +99,16 @@ function clearbutton()
   {
     document.getElementById("MyNewName").value="";
   }
+
+function sorteerAZ() {
+    personen.sort();
+    document.getElementById("arrayList").innerHTML = personen;
+}
+
+function sorteerZA() {
+    personen.sort().reverse();
+    document.getElementById("arrayList").innerHTML = personen;
+}
 </script>
 	</body>
 </html>
