@@ -13,43 +13,27 @@
   <body>
 
 		<div class="headerimage border-bottom-10">
-			<img src="img/header200px.jpg" class="img-fluid custom-header-image" alt="Responsive image">
+			<img src="img/noorderlink-kennismaken-met-codegorilla.png" class="img-fluid custom-header-image" alt="Responsive image">
 		</div>
-
-		
-		<!-- A grey horizontal navbar that becomes vertical on small screens -->
-		<nav class="navbar navbar-expand-sm navbar-custom justify-content-center fixed-bottom">
-
-		  <!-- Links -->
-		  <ul class="navbar-nav">
-			<li class="nav-item">
-			  <a class="nav-link" href="index.html">HOME</a>
-			</li>
-			<li class="nav-item">
-			  <a class="nav-link" href="collegalijst.html">Tabel van alle collega's</a>
-			</li>
-			<li class="nav-item">
-			  <a class="nav-link" href="interactievelijst.html">Interactieve lijst van alle collega's</a>
-			</li>
-			<li class="nav-item">
-			  <a class="nav-link" href="arraylijstcollega.html">Array lijst van alle collega's</a>
-			</li>			
-		  </ul>
-
-		</nav>
 		
 <div class="container-fluid">
 	<div class="row mx-auto" style="width: 80%">
 		<div class="col-md-12 mt-5 custom-collumn-box rounded">
-			<img src="img/adresboeklogo.jpg" class="border6px m-3 img-fluid rounded-circle float-md-right custom-image-size" alt="">
-			<h1>Lijst</h1>
-			<p>Dit is een lijst van alle Codegorilla collega's.</p> 
+			<img src="img/logo-code-gorilla-vierkant.png" class="border6px m-3 img-fluid rounded-circle float-md-right custom-image-size" alt="">
+			<h1>Contact lijst Codegorilla</h1>
+			<p>Dit is een lijst van alle Codegorilla collega's. Je kan hier zoeken naar de 
+				collega's en zelfs sorteren voor het zoekgemak. Ook is het mogelijk om
+				nieuwe toe te toevoegen.
+			</p> 
 			<p>In het veld hieronder kun je makkelijk zoeken naar de juiste persoon.</p>
 			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Zoek naar collega's..">
-			<input id="MyNewName" type="text" placeholder="Nieuw persoon">
-			<button onclick="addPerson()";>Toevoegen</button>
 			<p><button onclick="sortTableAZ()">Sorteer A-Z</button></p>
 			<p><button onclick="sortTableZA()">Sorteer Z-A</button></p>
+			<input id="MyNewFirstName" type="text" placeholder="Voornaam" name="fname">
+			<input id="MyNewLastName" type="text" placeholder="Achternaam">
+			<input id="MyNewMail" type="text" placeholder="@mail">
+			<input id="MyNewTel" type="number" placeholder="Telefoon">
+			<button onclick="addPerson()";>Toevoegen</button>
 		</div>
 	</div>
 
@@ -283,13 +267,17 @@
 		}
 	}
 
-	function addPerson()
-		{
-			var node = document.createElement("tr");                 // Create a <li> node
-			var sName = document.getElementById ("MyNewName").value;
-			var textnode = document.createTextNode(sName);         // Create a text node
-			node.appendChild(textnode);                              // Append the text to <li>
-			document.getElementById("myList").appendChild(node);     // Append <li> to <ul> with id="myList"
+	function addPerson() {
+	var table = document.getElementById("myTable");
+	var row = table.insertRow(1);
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+	var cell3 = row.insertCell(2);
+	var cell4 = row.insertCell(3);
+	cell1.innerHTML = document.getElementById("MyNewFirstName").value;
+	cell2.innerHTML = document.getElementById("MyNewLastName").value;
+	cell3.innerHTML = document.getElementById("MyNewMail").value;
+	cell4.innerHTML = document.getElementById("MyNewTel").value;
 	}
 
 	function sortTableAZ() {
@@ -337,6 +325,14 @@
 		}
 	}
 	}
+
+		function validateForm() {
+		var x = document.forms["MyNewFirstName"]["fname"].value;
+		if (x == "") {
+			alert("Name must be filled out");
+			return false;
+		}
+}
 
 		</script>
 
