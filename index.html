@@ -33,11 +33,11 @@
 			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Zoek naar collega's.."></p>
 			<br /><br />
 			<p>Met de velden hieronder kun je makkelijk nieuwe collega's toevoegen.</p>
-			<input id="MyNewFirstName" type="text" placeholder="Voornaam">
+			<input id="MyNewFirstName" type="text" placeholder="Voornaam" required>
 			<input id="MyNewLastName" type="text" placeholder="Achternaam" required>
 			<input id="MyNewMail" type="text" placeholder="@mail" required>
 			<input id="MyNewTel" type="text" placeholder="Telefoon" required>
-			<button onclick="addPerson()";>Toevoegen</button></p>
+			<button onclick="addPerson(); check();">Toevoegen</button></p>
 		</div>
 	</div>
 
@@ -330,12 +330,21 @@
 	}
 	}
 
-	function validateForm() {
-	var x = document.forms["MyNewFirstName"]["fname"].value;
-	if (x == "") {
-		alert("Name must be filled out");
-		return false;
+	function check()
+	{
+	if(!document.getElementById("MyNewFirstName").checkValidity())
+	{
+
+		alert("Input not valid. Please write your info correctly.");
+
+	}else
+	{
+		callMeIfValid();
 	}
+	}
+
+	function callMeIfValid()
+	{
 	}
 
 		</script>
