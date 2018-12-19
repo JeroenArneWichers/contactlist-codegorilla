@@ -7,6 +7,7 @@
 body{
     font-family: 'Old Standard TT', serif;
     font-size: 150%;
+    color: white;
 }
 
 .spacer600 {
@@ -26,7 +27,7 @@ body{
 }
 
 .border-bottom-10 {
-    border-bottom: 10px solid black !important;
+    border-bottom: 10px solid rgb(213, 196, 67) !important;
 }
 
 .border-top-10 {
@@ -37,7 +38,7 @@ body{
     //background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 200px;
+    height: auto;
     width: 100%;
 }
 
@@ -51,54 +52,19 @@ body{
     
     display: block;
     //background-image: url('https://dummyimage.com/1200x800/949494/000000&text=background+placeholder+1');
-    background-image: url("../img/roman_road.jpg");
+    background-image: url("../img/jungle-background.jpg");
     width: 2000px;
     height: 100%;
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
-    
-    -webkit-filter: blur(2px);
-    -moz-filter: blur(2px);
-    -o-filter: blur(2px);
-    -ms-filter: blur(2px);
-    filter: blur(2px);
 
     border-left: 6px
   }
 
   .border6px{
-      border: black 6px solid;
+      border: rgb(213, 196, 67) 6px solid;
   }
-
-  /* change the background color */
-.navbar-custom {
-    background-color: #3b3b3b !important;
-    align-items: center;
-    text-align: center;
-    border-top: 6px solid black;
-    font-size: 24px;
-    background-image: url("../img/header200px.jpg") !important;
-    background-position: bottom;
-}
-
-.nav-link {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 1.2em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: black;
-    background-color: white;
-    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
-    background: rgba(80, 80, 80, 0.5);
-}
-  
-.nav-link:hover {
-    color: white;
-    background-color: white;
-    background: rgb(0, 0, 0); /* Fallback for older browsers without RGBA-support */
-    background: rgba(204, 204, 204, 0.5);
-}
 
 .custom-image-size{
     height: 300px;
@@ -106,8 +72,8 @@ body{
 }
 
 .custom-collumn-box {
-    background: rgb(204, 204, 204); /* Fallback for older browsers without RGBA-support */
-    background: rgba(204, 204, 204, 0.5);
+    background: rgb(23, 31, 52); /* Fallback for older browsers without RGBA-support */
+    background: rgba(23, 31, 52, 0.8);
     padding-top: 20px;
     padding-left: 10px;
     padding-right: 10px;
