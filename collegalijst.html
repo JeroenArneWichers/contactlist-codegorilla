@@ -23,21 +23,25 @@
 			<h1>Contact lijst Codegorilla</h1>
 			<p>Dit is een lijst van alle Codegorilla collega's. Je kan hier zoeken naar de 
 				collega's en zelfs sorteren voor het zoekgemak. Ook is het mogelijk om
-				nieuwe toe te toevoegen.
-			</p> 
-			<p>In het veld hieronder kun je makkelijk zoeken naar de juiste persoon.</p>
-			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Zoek naar collega's..">
-			<p><button onclick="sortTableAZ()">Sorteer A-Z</button></p>
-			<p><button onclick="sortTableZA()">Sorteer Z-A</button></p>
+				nieuwe toe te toevoegen.</p> 
+			<br /><br />
+			<p>Met de buttons hiernaast kun je makkelijk sorteren.</p>
+			<button onclick="sortTableAZ()">Sorteer A-Z</button>
+			<button onclick="sortTableZA()">Sorteer Z-A</button></p>
+			<br /><br />
+			<p>In het veld hiernaast kun je makkelijk zoeken naar de juiste persoon.</p>
+			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Zoek naar collega's.."></p>
+			<br /><br />
+			<p>Met de velden hieronder kun je makkelijk nieuwe collega's toevoegen.</p>
 			<input id="MyNewFirstName" type="text" placeholder="Voornaam" name="fname">
 			<input id="MyNewLastName" type="text" placeholder="Achternaam">
 			<input id="MyNewMail" type="text" placeholder="@mail">
 			<input id="MyNewTel" type="number" placeholder="Telefoon">
-			<button onclick="addPerson()";>Toevoegen</button>
+			<button onclick="addPerson()";>Toevoegen</button></p>
 		</div>
 	</div>
 
-	<div class="row mx-auto spacerbottom600" style="width: 80%">
+	<div class="row mx-auto spacerbottom200" style="width: 80%">
 		<div class="col-md-12 mt-5 custom-collumn-box rounded">
 			<table id="myTable" class="table table-dark">
 				<thead>
