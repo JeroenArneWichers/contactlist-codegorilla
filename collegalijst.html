@@ -46,6 +46,10 @@
 			<p>Dit is een lijst van alle Codegorilla collega's.</p> 
 			<p>In het veld hieronder kun je makkelijk zoeken naar de juiste persoon.</p>
 			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Zoek naar collega's..">
+			<input id="MyNewName" type="text" placeholder="Nieuw persoon">
+			<button onclick="addPerson()";>Toevoegen</button>
+			<p><button onclick="sortTableAZ()">Sorteer A-Z</button></p>
+			<p><button onclick="sortTableZA()">Sorteer Z-A</button></p>
 		</div>
 	</div>
 
@@ -260,50 +264,79 @@
 
 <script>
 
-function myFunction() {
-    var input, filter, table, tr, td, i, ii;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    table = document.getElementById("myTable");
-    tr = table.querySelectorAll("tbody tr");
-    for (i = 0; i < tr.length; i++) {
-        var tds = tr[i].getElementsByTagName("td");
-        var found = false;
-        for (ii = 0; ii < tds.length && !found; ii++) {
-            if (tds[ii].textContent.toUpperCase().indexOf(filter) > -1) {
-                found = true;
-                break;
-            }
-        }
-        tr[i].style.display = found?"":"none";
-    }
-}
-
-
-	/*
-		function myFunction() {
-			// Declare variables 
-			var input, filter, table, tr, td, i, txtValue;
-			input = document.getElementById("myInput");
-			filter = input.value.toUpperCase();
-			table = document.getElementById("myTable");
-			tr = table.getElementsByTagName("tr");
-		
-			// Loop through all table rows, and hide those who don't match the search query
-			for (i = 0; i < tr.length; i++) {
-				td = tr[i].getElementsByTagName("td")[0],
-				if (td) {
-					txtValue = td.textContent || td.innerText;
-					if (txtValue.toUpperCase().indexOf(filter) > -1) {
-						tr[i].style.display = "";
-					} else {
-						tr[i].style.display = "none";
-					}
-				} 
+	function myFunction() {
+		var input, filter, table, tr, td, i, ii;
+		input = document.getElementById("myInput");
+		filter = input.value.toUpperCase();
+		table = document.getElementById("myTable");
+		tr = table.querySelectorAll("tbody tr");
+		for (i = 0; i < tr.length; i++) {
+			var tds = tr[i].getElementsByTagName("td");
+			var found = false;
+			for (ii = 0; ii < tds.length && !found; ii++) {
+				if (tds[ii].textContent.toUpperCase().indexOf(filter) > -1) {
+					found = true;
+					break;
+				}
 			}
+			tr[i].style.display = found?"":"none";
 		}
+	}
 
-	*/
+	function addPerson()
+		{
+			var node = document.createElement("tr");                 // Create a <li> node
+			var sName = document.getElementById ("MyNewName").value;
+			var textnode = document.createTextNode(sName);         // Create a text node
+			node.appendChild(textnode);                              // Append the text to <li>
+			document.getElementById("myList").appendChild(node);     // Append <li> to <ul> with id="myList"
+	}
+
+	function sortTableAZ() {
+	var table, rows, switching, i, x, y, shouldSwitch;
+	table = document.getElementById("myTable");
+	switching = true;
+	while (switching) {
+		switching = false;
+		rows = table.rows;
+		for (i = 1; i < (rows.length - 1); i++) {
+		shouldSwitch = false;
+		x = rows[i].getElementsByTagName("TD")[0];
+		y = rows[i + 1].getElementsByTagName("TD")[0];
+		if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+			shouldSwitch = true;
+			break;
+		}
+		}
+		if (shouldSwitch) {
+		rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+		switching = true;
+		}
+	}
+	}
+
+	function sortTableZA() {
+	var table, rows, switching, i, x, y, shouldSwitch;
+	table = document.getElementById("myTable");
+	switching = true;
+	while (switching) {
+		switching = false;
+		rows = table.rows;
+		for (i = 1; i < (rows.length - 1); i++) {
+		shouldSwitch = false;
+		x = rows[i].getElementsByTagName("TD")[0];
+		y = rows[i + 1].getElementsByTagName("TD")[0];
+		if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+			shouldSwitch = true;
+			break;
+		}
+		}
+		if (shouldSwitch) {
+		rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+		switching = true;
+		}
+	}
+	}
 
 		</script>
 
