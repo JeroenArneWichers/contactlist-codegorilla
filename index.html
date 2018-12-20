@@ -33,11 +33,11 @@
 			<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Zoek naar collega's.."></p>
 			<br /><br />
 			<p>Met de velden hieronder kun je makkelijk nieuwe collega's toevoegen.</p>
-			<input id="MyNewFirstName" type="text" placeholder="Voornaam" required>
+			<input id="MyNewFirstName" type="text" placeholder="Voornaam" required onkeyup="manage(this)">
 			<input id="MyNewLastName" type="text" placeholder="Achternaam" required>
 			<input id="MyNewMail" type="text" placeholder="@mail" required>
 			<input id="MyNewTel" type="text" placeholder="Telefoon" required>
-			<button onclick="addPerson(); check();">Toevoegen</button></p>
+			<input type="submit" id="btSubmit" disabled onclick="addPerson(); check();" value="Toevoegen"/></p>
 		</div>
 	</div>
 
@@ -346,6 +346,16 @@
 	function callMeIfValid()
 	{
 	}
+
+    function manage(MyNewFirstName) {
+        var bt = document.getElementById('btSubmit');
+        if (MyNewFirstName.value != '') {
+            bt.disabled = false;
+        }
+        else {
+            bt.disabled = true;
+        }
+    }  
 		</script>
 
     <!-- Optional JavaScript -->
@@ -353,5 +363,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+<body> 
+</body>
 </html>
